@@ -685,9 +685,15 @@
                     scope.predicate = '-id';
                 });
             }
-
+            
+            scope.deleteNote = function(clientId, entityId, index) {
+                resourceFactory.clientNotesResource.delete({clientId: clientId, noteId: entityId}, '', function(data) {
+                    scope.clientNotes.splice(index, 1); 
+                });
+            }
+            
             scope.deleteClientIdentifierDocument = function (clientId, entityId, index) {
-                resourceFactory.clientIdenfierResource.delete({clientId: clientId, id: entityId}, '', function (data) {
+                resourceFactory.clientIdentifierResource.delete({clientId: clientId, id: entityId}, '', function (data) {
                     scope.identitydocuments.splice(index, 1);
                 });
             };
