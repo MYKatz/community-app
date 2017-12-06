@@ -1035,6 +1035,7 @@
 							{{clientNote.id}}
 							<small>{{'label.createdby' | translate}} :&nbsp;{{clientNote.createdByUsername}}</small>
 							<small>{{'label.createdon' | translate}} :&nbsp;{{clientNote.createdOn | DateFormat}}</small>
+							<button class="btn btn-primary" type="submit" ng-click="deleteNote(client.id,clientNote.id,$index)" has-permission='DELETE_CLIENTNOTE'>{{'label.button.delete' |translate}}
 						</blockquote>
 					</div>
 				</uib-tab>
